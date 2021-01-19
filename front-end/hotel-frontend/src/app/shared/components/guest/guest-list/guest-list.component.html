@@ -1,0 +1,30 @@
+<p-panel header="Lista de hóspedes">
+    <p-table [value]="guests" styleClass="p-datatable-striped">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id">Código <p-sortIcon field="id"></p-sortIcon>
+                </th>
+                <th pSortableColumn="name">Nome <p-sortIcon field="name"></p-sortIcon>
+                </th>
+                <th pSortableColumn="document">Documento <p-sortIcon field="document"></p-sortIcon>
+                </th>
+                <th pSortableColumn="phone">Telefone <p-sortIcon field="phone"></p-sortIcon>
+                </th>
+                <th>Opções</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-guest>
+            <tr>
+                <td>{{guest.id}}</td>
+                <td>{{guest.name}}</td>
+                <td>{{guest.document}}</td>
+                <td>{{guest.phone}}</td>
+                <td>
+                    <button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-mr-2"></button>
+                    <button pButton pRipple (click)="delete(guest.id)" type="button" icon="pi pi-trash" class="p-button-rounded"></button>
+
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-panel>
