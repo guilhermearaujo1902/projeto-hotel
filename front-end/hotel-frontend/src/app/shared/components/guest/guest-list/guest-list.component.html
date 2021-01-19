@@ -1,3 +1,4 @@
+<p-toast position="top-center"></p-toast>
 <p-panel header="Lista de hóspedes">
     <p-table [value]="guests" styleClass="p-datatable-striped">
         <ng-template pTemplate="header">
@@ -21,8 +22,8 @@
                 <td>{{guest.phone}}</td>
                 <td>
                     <button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-mr-2"></button>
-                    <button pButton pRipple (click)="delete(guest.id)" type="button" icon="pi pi-trash" class="p-button-rounded"></button>
-
+					<p-confirmPopup></p-confirmPopup>
+					<button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded" (click)="confirm($event, guest)"></button>
                 </td>
             </tr>
         </ng-template>

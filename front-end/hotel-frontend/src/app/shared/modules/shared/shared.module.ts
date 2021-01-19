@@ -11,6 +11,12 @@ import {CardModule} from 'primeng/card';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputMaskModule} from 'primeng/inputmask';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+
+import {ConfirmationService} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 
 
 @NgModule({
@@ -26,6 +32,13 @@ import {InputMaskModule} from 'primeng/inputmask';
     TableModule,
     InputTextModule,
     InputMaskModule,
+	ConfirmPopupModule,
+	ToastModule,
+	ConfirmDialogModule
+  ],
+  providers: [
+	ConfirmationService,
+	MessageService
   ]
 })
 export class SharedModule { }

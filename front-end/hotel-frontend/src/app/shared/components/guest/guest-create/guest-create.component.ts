@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GuestService } from 'src/app/core/services/guest/guest.service';
 import { Guest } from 'src/app/shared/models/Guest';
+
+import { GuestService } from 'src/app/core/services/guest/guest.service';
+import {ConfirmationService} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-guest-create',
@@ -14,7 +17,9 @@ export class GuestCreateComponent implements OnInit {
 
   constructor(
     private guestService: GuestService,
-    private router: Router
+    private router: Router,
+	private confirmationService: ConfirmationService,
+	private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -24,8 +29,10 @@ export class GuestCreateComponent implements OnInit {
   public onSubmit(){
     this.guestService.create(this.guest)
       .subscribe(data => {
+		  this.msgSaveSuccess();
         this.guest = new Guest();
-        this.goToList();
+		
+        //this.goToList();
       },
         error => console.log(error)
       );
@@ -34,5 +41,17 @@ export class GuestCreateComponent implements OnInit {
   public goToList() {
     this.router.navigate(['/guest-list']);
   }
+  
+  public confirm() {
+        this.confirmationService.confirm({
+            message: 'Tem certeza que deseja salvar os dados?',
+            accept: () => {
+                this.onSubmit();
+            }
+        });
+    }
 
+	public msgSaveSuccess() {
+        this.messageService.add({severity:'success', summary:'Mensagem', detail:'Hóspede salvo com sucesso.'});
+    }
 }

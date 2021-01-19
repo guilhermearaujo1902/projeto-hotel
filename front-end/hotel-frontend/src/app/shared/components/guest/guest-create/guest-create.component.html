@@ -1,3 +1,4 @@
+<p-toast position="top-center"></p-toast>
 <p-panel header="Cadastro de hóspede">
 
     <form (ngSubmit)="onSubmit()">
@@ -22,8 +23,9 @@
         </div>
         <div class="p-grid p-jc-center">
             <div >
-                <button pButton type="submit" label="Salvar" class="p-mr-2"></button>
-                <button pButton type="reset" label="Limpar" class="p-button-secondary"></button>
+				<button pButton type="button" label="Salvar" (click)="confirm()" class="p-mr-2"></button>
+                <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+				<button pButton type="reset" label="Limpar" class="p-button-secondary"></button>
             </div>
         </div>
     </form>
