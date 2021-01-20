@@ -19,9 +19,9 @@ public class H2Configuration implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Guest g1 = new Guest(1, "João da Silva", "123456789", "17 98888-8888");
-		Guest g2 = new Guest(2, "Maria de Souza", "456789123", "17 97777-7777");
-		Guest g3 = new Guest(3, "Pedro Sauro", "789123456", "17 96666-6666");
+		Guest g1 = new Guest(1, "João da Silva", "123.456.789-79", "17 98888-8888");
+		Guest g2 = new Guest(2, "Maria de Souza", "456.789.123-13", "17 97777-7777");
+		Guest g3 = new Guest(3, "Pedro Sauro", "789.123.456-46", "17 96666-6666");
 		guestRepository.saveAll(Arrays.asList(g1,g2,g3));
 	}
 

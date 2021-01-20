@@ -3,28 +3,21 @@
     <p-table [value]="checkins" styleClass="p-datatable-striped">
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="id">Código <p-sortIcon field="id"></p-sortIcon>
-                </th>
                 <th pSortableColumn="guest">Hóspede <p-sortIcon field="guest"></p-sortIcon>
                 </th>
                 <th pSortableColumn="dateIn">Data entrada <p-sortIcon field="dateIn"></p-sortIcon>
                 </th>
-                <th pSortableColumn="dateOut">Data entrada <p-sortIcon field="dateOut"></p-sortIcon>
+                <th pSortableColumn="dateOut">Data saída <p-sortIcon field="dateOut"></p-sortIcon>
                 </th>
-                <th pSortableColumn="addVehicle">Veículo <p-sortIcon field="addVehicle"></p-sortIcon>
-                </th>
-                <th>Opções</th>
+                <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-checkin>
             <tr>
-                <td>{{checkin.id}}</td>
                 <td>{{checkin.guest.name}}</td>
-                <td>{{checkin.dateIn}}</td>
-                <td>{{checkin.dateOut}}</td>
-                <td>{{checkin.addVehicle}}</td>
+                <td>{{checkin.dateIn | date: 'dd/MM/yyyy'}}</td>
+                <td>{{checkin.dateOut | date: 'dd/MM/yyyy'}}</td>
                 <td>
-                    <button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-mr-2"></button>
 					<p-confirmPopup></p-confirmPopup>
 					<button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded" (click)="confirm($event, guest)"></button>
                 </td>

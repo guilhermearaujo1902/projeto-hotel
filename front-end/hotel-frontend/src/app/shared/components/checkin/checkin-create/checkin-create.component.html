@@ -7,13 +7,13 @@
             <div class="p-field p-col-6">
                 <label for="dateIn">Data e hora de entrada</label>
                 <p-calendar [(ngModel)]="checkin.dateIn" name="dateIn" inputId="dateIn" dateFormat="dd/mm/yy"
-                    [showTime]="true"></p-calendar>
+                    [showTime]="true" hourFormat="24"></p-calendar>
             </div>
 
             <div class="p-field p-col-6">
                 <label for="dateOut">Data e hora de saída</label>
                 <p-calendar [(ngModel)]="checkin.dateOut" name="dateOut" inputId="dateOut" dateFormat="dd/mm/yy"
-                    [showTime]="true"></p-calendar>
+                    [showTime]="true" hourFormat="24" [minDate]="checkin.dateIn" [readonlyInput]="true"></p-calendar>
             </div>
 
             <div class="p-field p-col-6">

@@ -47,7 +47,9 @@ export class MenuComponent implements OnInit {
       {
         label: 'Registro de check-in',
         icon: 'pi pi-list',
-        routerLink: ''
+        command: () => {
+          this.router.navigate(['/checkin-list']);
+        }
       }
       ]
     }

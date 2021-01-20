@@ -7,14 +7,12 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/modules/shared/shared.module';
 import { MenuComponent } from './shared/components/menu/menu.component';
-import { CheckinListComponent } from './shared/components/checkin/checkin-list/checkin-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    CheckinListComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
