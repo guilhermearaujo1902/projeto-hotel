@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'checkin-create',
-    loadChildren: () => import('./shared/components/checkin/checkin-create/checkin-create.module').then(m => m.ChekinCreateModule)
+    loadChildren: () => import('./shared/components/checkin/checkin-save/checkin-save.module').then(m => m.ChekinSaveModule)
   },
   {
     path: 'checkin-list',

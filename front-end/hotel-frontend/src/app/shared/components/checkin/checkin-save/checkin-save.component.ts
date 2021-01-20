@@ -11,11 +11,11 @@ import { MessageService } from 'primeng/api';
 import { GuestService } from 'src/app/core/services/guest/guest.service';
 
 @Component({
-  selector: 'app-checkin-create',
-  templateUrl: './checkin-create.component.html',
-  styleUrls: ['./checkin-create.component.css']
+  selector: 'app-checkin-save',
+  templateUrl: './checkin-save.component.html',
+  styleUrls: ['./checkin-save.component.css']
 })
-export class CheckinCreateComponent implements OnInit {
+export class CheckinSaveComponent implements OnInit {
 
   public checkin: Checkin = new Checkin();
   public guests: Observable<Guest[]>;

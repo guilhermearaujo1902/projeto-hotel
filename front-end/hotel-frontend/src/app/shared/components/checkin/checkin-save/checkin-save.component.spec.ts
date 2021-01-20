@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheckinCreateComponent } from './checkin-create.component';
+import { CheckinSaveComponent } from './checkin-save.component';
 
 describe('CheckinCreateComponent', () => {
-  let component: CheckinCreateComponent;
-  let fixture: ComponentFixture<CheckinCreateComponent>;
+  let component: CheckinSaveComponent;
+  let fixture: ComponentFixture<CheckinSaveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckinCreateComponent ]
+      declarations: [ CheckinSaveComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CheckinCreateComponent);
+    fixture = TestBed.createComponent(CheckinSaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -17,6 +17,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CalendarModule } from 'primeng/calendar';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {CheckboxModule} from 'primeng/checkbox';
+import {ListboxModule} from 'primeng/listbox';
 
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
@@ -40,7 +41,8 @@ import { MessageService } from 'primeng/api';
     ConfirmDialogModule,
     CalendarModule,
     AutoCompleteModule,
-    CheckboxModule
+    CheckboxModule,
+    ListboxModule
   ],
   providers: [
     ConfirmationService,

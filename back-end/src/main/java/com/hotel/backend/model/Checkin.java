@@ -21,6 +21,7 @@ public class Checkin implements Serializable {
 	private Calendar dateIn;
 	private Calendar dateOut;
 	private boolean addVehicle;
+	private double value;
 	
 	public Checkin() {
 	}
@@ -79,6 +80,15 @@ public class Checkin implements Serializable {
 		this.addVehicle = addVehicle;
 	}
 
+	@Column(name = "value", nullable = false)
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -86,7 +96,8 @@ public class Checkin implements Serializable {
 	@Override
 	public String toString() {
 		return "Checkin [id=" + id + ", guest=" + guest + ", dateIn=" + dateIn + ", dateOut=" + dateOut
-				+ ", addVehicle=" + addVehicle + "]";
+				+ ", addVehicle=" + addVehicle + ", valor=" + value + "]";
 	}
+	
 	
 }
