@@ -1,1 +1,39 @@
-<p>checkin-create works!</p>
+<p-toast position="top-center"></p-toast>
+<p-panel header="Realizar Check-in">
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="p-fluid p-formgrid p-grid">
+
+            <div class="p-field p-col-6">
+                <label for="dateIn">Data e hora de entrada</label>
+                <p-calendar [(ngModel)]="checkin.dateIn" name="dateIn" inputId="dateIn" dateFormat="dd/mm/yy"
+                    [showTime]="true"></p-calendar>
+            </div>
+
+            <div class="p-field p-col-6">
+                <label for="dateOut">Data e hora de saída</label>
+                <p-calendar [(ngModel)]="checkin.dateOut" name="dateOut" inputId="dateOut" dateFormat="dd/mm/yy"
+                    [showTime]="true"></p-calendar>
+            </div>
+
+            <div class="p-field p-col-6">
+                <label for="guest">Selecione o hóspede</label>
+                <p-autoComplete [(ngModel)]="checkin.guest" name="guest" field="name" id="guest" [suggestions]="guests"
+                    (completeMethod)="findGuests()" [dropdown]="true"></p-autoComplete>
+            </div>
+
+            <div class="p-field-checkbox p-col-6">
+                <p-checkbox [(ngModel)]="checkin.addVehicle" name="addVehicle" binary="true" inputId="addVehicle">
+                </p-checkbox>
+                <label for="addVehicle"> Possui veículo</label>
+            </div>
+        </div>
+        <div class="p-grid p-jc-center">
+            <div>
+                <button pButton type="button" label="Salvar" (click)="confirm()" class="p-mr-2"></button>
+                <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+                <button pButton type="reset" label="Limpar" class="p-button-secondary"></button>
+            </div>
+        </div>
+    </form>
+</p-panel>

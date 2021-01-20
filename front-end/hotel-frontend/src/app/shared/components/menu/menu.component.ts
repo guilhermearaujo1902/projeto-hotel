@@ -18,16 +18,16 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.items = [{
-      label: 'Guest',
+      label: 'Hóspede',
       items: [{
-        label: 'New guest',
+        label: 'Novo hóspede',
         icon: 'pi pi-plus',
         command: () => {
           this.router.navigate(['/guest-create']);
         }
       },
       {
-        label: 'List of guests',
+        label: 'Lista de hóspedes',
         icon: 'pi pi-list',
         command: () => {
           this.router.navigate(['/guest-list']);
@@ -36,13 +36,16 @@ export class MenuComponent implements OnInit {
       ]
     },
     {
-      label: 'Checkin',
+      label: 'Check-in',
       items: [{
-        label: 'New check-in',
+        label: 'Novo check-in',
         icon: 'pi pi-plus',
+        command: () => {
+          this.router.navigate(['/checkin-create']);
+        }
       },
       {
-        label: 'List of check-ins',
+        label: 'Registro de check-in',
         icon: 'pi pi-list',
         routerLink: ''
       }

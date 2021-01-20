@@ -9,11 +9,15 @@ const routes: Routes = [
   {
     path: 'guest-list',
     loadChildren: () => import('./shared/components/guest/guest-list/guest-list.module').then(m => m.GuestListModule)
+  },
+  {
+    path: 'checkin-create',
+    loadChildren: () => import('./shared/components/checkin/checkin-create/checkin-create.module').then(m => m.ChekinCreateModule)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

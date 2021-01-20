@@ -3,20 +3,23 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import {ButtonModule} from 'primeng/button';
-import {AccordionModule} from 'primeng/accordion';
-import {PanelModule} from 'primeng/panel';
-import {MenuModule} from 'primeng/menu';
-import {CardModule} from 'primeng/card';
-import {TableModule} from 'primeng/table';
-import {InputTextModule} from 'primeng/inputtext';
-import {InputMaskModule} from 'primeng/inputmask';
-import {ConfirmPopupModule} from 'primeng/confirmpopup';
-import {ToastModule} from 'primeng/toast';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { ButtonModule } from 'primeng/button';
+import { AccordionModule } from 'primeng/accordion';
+import { PanelModule } from 'primeng/panel';
+import { MenuModule } from 'primeng/menu';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { CalendarModule } from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {CheckboxModule} from 'primeng/checkbox';
 
-import {ConfirmationService} from 'primeng/api';
-import {MessageService} from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -32,13 +35,16 @@ import {MessageService} from 'primeng/api';
     TableModule,
     InputTextModule,
     InputMaskModule,
-	ConfirmPopupModule,
-	ToastModule,
-	ConfirmDialogModule
+    ConfirmPopupModule,
+    ToastModule,
+    ConfirmDialogModule,
+    CalendarModule,
+    AutoCompleteModule,
+    CheckboxModule
   ],
   providers: [
-	ConfirmationService,
-	MessageService
+    ConfirmationService,
+    MessageService
   ]
 })
 export class SharedModule { }

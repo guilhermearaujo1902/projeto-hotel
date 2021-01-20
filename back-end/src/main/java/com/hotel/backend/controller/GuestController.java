@@ -30,30 +30,30 @@ public class GuestController {
 	private GuestRepository guestRepository;
 
 	@GetMapping("guest")
-	public List<Guest> getAllGuests(){
+	public List<Guest> getAll(){
 		return guestRepository.findAll();
 	}
 	
 	@GetMapping("guest/{id}")
-	public ResponseEntity<Guest> getGuestById(@PathVariable(value = "id") Long guestId) throws ResourceNotFoundException{
+	public ResponseEntity<Guest> getById(@PathVariable(value = "id") Long id) throws ResourceNotFoundException{
 		
-		Guest guest = guestRepository.findById(guestId)
-				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + guestId));
+		Guest guest = guestRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + id));
 		
 		return ResponseEntity.ok().body(guest);		
 	}
 	
 	@PostMapping("guest")
-	public Guest createGuest(@Validated @RequestBody Guest guest) {
+	public Guest create(@Validated @RequestBody Guest guest) {
 		return guestRepository.save(guest);
 	}
 	
 	@PutMapping("/guest/{id}")
-	public ResponseEntity<Guest> updateGuest(@PathVariable(value = "id") Long guestId,
+	public ResponseEntity<Guest> update(@PathVariable(value = "id") Long id,
 	         @Validated @RequestBody Guest guestDetails) throws ResourceNotFoundException {
 		
-		Guest guest = guestRepository.findById(guestId)
-				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + guestId));
+		Guest guest = guestRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + id));
 
 		guest.setName(guestDetails.getName());
 		guest.setDocument(guestDetails.getDocument());
@@ -63,10 +63,10 @@ public class GuestController {
 	}
 	
 	@DeleteMapping("/guest/{id}")
-	public Map<String, Boolean> deleteGuest(@PathVariable(value = "id") Long guestId) throws ResourceNotFoundException{
+	public Map<String, Boolean> delete(@PathVariable(value = "id") Long id) throws ResourceNotFoundException{
 		
-		Guest guest = guestRepository.findById(guestId)
-				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + guestId));
+		Guest guest = guestRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Guest not found on this ID :: " + id));
 		
 		guestRepository.delete(guest);
 		Map<String, Boolean> response = new HashMap<>();
