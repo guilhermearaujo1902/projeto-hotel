@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Guest } from 'src/app/shared/models/Guest';
 
 import { GuestService } from 'src/app/core/services/guest/guest.service';
@@ -7,11 +7,11 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-guest-create',
-  templateUrl: './guest-create.component.html',
-  styleUrls: ['./guest-create.component.css']
+  selector: 'app-guest-save',
+  templateUrl: './guest-save.component.html',
+  styleUrls: ['./guest-save.component.css']
 })
-export class GuestCreateComponent implements OnInit {
+export class GuestSaveComponent implements OnInit {
 
   public guest: Guest = new Guest();
 
@@ -19,11 +19,16 @@ export class GuestCreateComponent implements OnInit {
     private guestService: GuestService,
     private router: Router,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-
+    this.route.params.subscribe(param => {
+      if ((param['id']) && (param['id'] != " ")) {
+        this.findById(param['id']);
+      }
+    });
   }
 
   public onSubmit() {
@@ -31,15 +36,16 @@ export class GuestCreateComponent implements OnInit {
       .subscribe(data => {
         this.msgSaveSuccess();
         this.guest = new Guest();
-
-        //this.goToList();
       },
         error => console.log(error)
       );
   }
 
-  public goToList() {
-    this.router.navigate(['/guest-list']);
+  private findById(id: number) {
+    this.guestService.findById(id)
+      .subscribe(data => {
+        this.guest = data;
+      });
   }
 
   public confirm() {
@@ -54,4 +60,5 @@ export class GuestCreateComponent implements OnInit {
   public msgSaveSuccess() {
     this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Hóspede salvo com sucesso.' });
   }
+
 }

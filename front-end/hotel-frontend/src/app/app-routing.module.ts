@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'guest-create',
-    loadChildren: () => import('./shared/components/guest/guest-create/guest-create.module').then(m => m.GuestCreateModule)
+    path: 'guest-save/:id',
+    loadChildren: () => import('./shared/components/guest/guest-save/guest-save.module').then(m => m.GuestSaveModule)
   },
   {
     path: 'guest-list',

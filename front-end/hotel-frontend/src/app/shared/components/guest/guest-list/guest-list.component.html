@@ -21,7 +21,7 @@
                 <td>{{guest.document}}</td>
                 <td>{{guest.phone}}</td>
                 <td>
-                    <button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-mr-2"></button>
+                    <button pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded p-mr-2" (click)="update(guest.id)"></button>
 					<p-confirmPopup></p-confirmPopup>
 					<button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded" (click)="confirm($event, guest)"></button>
                 </td>

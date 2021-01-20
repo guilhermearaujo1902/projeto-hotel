@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
         label: 'Novo hóspede',
         icon: 'pi pi-plus',
         command: () => {
-          this.router.navigate(['/guest-create']);
+          this.router.navigate(['/guest-save/ ']);
         }
       },
       {

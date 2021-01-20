@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { Guest } from 'src/app/shared/models/Guest';
 
 import { GuestService } from 'src/app/core/services/guest/guest.service';
-import {ConfirmationService} from 'primeng/api';
-import {MessageService} from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-guest-list',
@@ -21,8 +21,8 @@ export class GuestListComponent implements OnInit {
   constructor(
     private guestService: GuestService,
     private router: Router,
-	private confirmationService: ConfirmationService,
-	private messageService: MessageService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -40,28 +40,32 @@ export class GuestListComponent implements OnInit {
     this.guestService.delete(id).subscribe(
       data => {
         this.findGuests();
-		this.msgDeleteSuccess();
+        this.msgDeleteSuccess();
       },
       error => console.log(error)
     );
   }
-  
+
+  public update(id: number) {
+    this.router.navigate(['guest-save/' + id]);
+  }
+
   public confirm(event: Event, guest: Guest) {
-        this.confirmationService.confirm({
-            target: event.target,
-            message: 'Tem certeza que deseja excluir ' + guest.name + '?',
-            icon: 'pi pi-exclamation-triangle',
-            accept: () => {
-                this.delete(guest.id);
-            },
-            reject: () => {
-                //reject action
-            }
-        });
-    }
-	
-	public msgDeleteSuccess() {
-        this.messageService.add({severity:'success', summary:'Mensagem', detail:'Hóspede excluído com sucesso.'});
-    }
+    this.confirmationService.confirm({
+      target: event.target,
+      message: 'Tem certeza que deseja excluir ' + guest.name + '?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.delete(guest.id);
+      },
+      reject: () => {
+        //reject action
+      }
+    });
+  }
+
+  public msgDeleteSuccess() {
+    this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Hóspede excluído com sucesso.' });
+  }
 
 }
