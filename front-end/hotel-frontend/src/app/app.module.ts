@@ -18,7 +18,7 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

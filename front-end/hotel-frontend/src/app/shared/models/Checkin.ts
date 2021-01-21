@@ -7,4 +7,5 @@ export class Checkin{
     dateIn: Calendar;
     dateOut: Calendar;
     addVehicle: boolean;
+    value: number;
 }

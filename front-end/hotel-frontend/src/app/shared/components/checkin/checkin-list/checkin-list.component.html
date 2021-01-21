@@ -9,6 +9,8 @@
                 </th>
                 <th pSortableColumn="dateOut">Data saída <p-sortIcon field="dateOut"></p-sortIcon>
                 </th>
+                <th pSortableColumn="value">Valor gasto <p-sortIcon field="value"></p-sortIcon>
+                </th>
                 <th></th>
             </tr>
         </ng-template>
@@ -17,6 +19,7 @@
                 <td>{{checkin.guest.name}}</td>
                 <td>{{checkin.dateIn | date: 'dd/MM/yyyy'}}</td>
                 <td>{{checkin.dateOut | date: 'dd/MM/yyyy'}}</td>
+                <td>{{checkin.value | currency: 'BRL'}}</td>
                 <td>
 					<p-confirmPopup></p-confirmPopup>
 					<button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded" (click)="confirm($event, guest)"></button>

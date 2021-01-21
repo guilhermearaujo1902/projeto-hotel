@@ -1,5 +1,6 @@
 package com.hotel.backend.controller;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,10 @@ public class CheckinController {
 	
 	@PostMapping("checkin")
 	public Checkin create(@Validated @RequestBody Checkin checkin) {
+		
+		CalculateCheckin calculate = new CalculateCheckin();		
+		checkin.setValue(calculate.calculate(checkin));
+		
 		return checkinRepository.save(checkin);
 	}
 	
