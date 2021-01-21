@@ -13,6 +13,9 @@ public class CalculateCheckin {
 		checkin.getDateIn().setTimeZone(zone);
 		checkin.getDateOut().setTimeZone(zone);
 		
+		Checkin dateIn = new Checkin();
+		dateIn.setDateIn(checkin.getDateIn());
+		
 		double total = 0;
 		double daysWeek = 0;
 		double daysWeekend = 0;
@@ -39,6 +42,7 @@ public class CalculateCheckin {
 	        }
 	    }
 	    
+	    checkin.setDateIn(dateIn.getDateIn());
 	    total = (daysWeekend * 150) + (daysWeek * 120) + (taxWeek * daysWeek) + (taxWeekend * daysWeekend);	    
 		return total;
 	}

@@ -53,7 +53,7 @@ public class Checkin implements Serializable {
 		this.guest = guest;
 	}
 
-	@Column(name = "dateIn", nullable = false)
+	@Column(name = "datein", nullable = false)
 	public Calendar getDateIn() {
 		return dateIn;
 	}
@@ -62,7 +62,7 @@ public class Checkin implements Serializable {
 		this.dateIn = dateIn;
 	}
 
-	@Column(name = "dateOut", nullable = false)
+	@Column(name = "dateout", nullable = false)
 	public Calendar getDateOut() {
 		return dateOut;
 	}
@@ -71,7 +71,7 @@ public class Checkin implements Serializable {
 		this.dateOut = dateOut;
 	}
 
-	@Column(name = "addVehicle", nullable = false)
+	@Column(name = "addvehicle", nullable = false)
 	public boolean isAddVehicle() {
 		return addVehicle;
 	}
@@ -96,8 +96,7 @@ public class Checkin implements Serializable {
 	@Override
 	public String toString() {
 		return "Checkin [id=" + id + ", guest=" + guest + ", dateIn=" + dateIn + ", dateOut=" + dateOut
-				+ ", addVehicle=" + addVehicle + ", valor=" + value + "]";
+				+ ", addVehicle=" + addVehicle + ", value=" + value + "]";
 	}
-	
 	
 }

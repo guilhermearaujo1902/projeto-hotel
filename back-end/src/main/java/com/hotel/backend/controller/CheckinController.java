@@ -37,7 +37,7 @@ public class CheckinController {
 	
 	@GetMapping("checkin/{id}")
 	public ResponseEntity<Checkin> getById(@PathVariable(value = "id") Long id) throws ResourceNotFoundException{
-		
+	
 		Checkin checkin = checkinRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Checkin not found on this ID :: " + id));
 		
