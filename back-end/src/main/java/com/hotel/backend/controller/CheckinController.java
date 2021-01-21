@@ -49,7 +49,6 @@ public class CheckinController {
 		
 		CalculateCheckin calculate = new CalculateCheckin();		
 		checkin.setValue(calculate.calculate(checkin));
-		
 		return checkinRepository.save(checkin);
 	}
 	

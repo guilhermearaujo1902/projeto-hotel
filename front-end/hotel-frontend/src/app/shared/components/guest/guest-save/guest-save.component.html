@@ -1,29 +1,32 @@
 <p-toast position="top-center"></p-toast>
 <p-panel header="Cadastro de hóspede">
 
-    <form (ngSubmit)="onSubmit()">
+    <form  (ngSubmit)="onSubmit()">
         <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col">
                 <div class="p-field">
                     <label for="name">Nome</label>
-                    <input id="name" name="name" [(ngModel)]="guest.name" type="text" pInputText placeholder="Digite o nome" required>
+                    <input id="name" name="name" [(ngModel)]="guest.name" type="text"
+                    required="true" pInputText placeholder="Digite o nome" >
                 </div>
 
                 <div class="p-field">
                     <label for="document">Documento</label>
-                    <p-inputMask id="document" name="document" [(ngModel)]="guest.document" mask="999.999.999-99" placeholder="Ex: 123.456.789-99" ariaRequired="true"></p-inputMask>
+                    <p-inputMask id="document" name="document" [(ngModel)]="guest.document" mask="999.999.999-99"
+                    required="true" placeholder="Ex: 123.456.789-99"></p-inputMask>
                 </div>
             </div>
             <div class="p-field p-col">
                 <div class="p-field">
                     <label for="phone">Telefone</label>
-                    <p-inputMask id="phone" name="phone" [(ngModel)]="guest.phone" mask="99 99999-9999" placeholder="Ex: 99 99999-9999" ariaRequired></p-inputMask>
+                    <p-inputMask id="phone" name="phone" [(ngModel)]="guest.phone" mask="99 99999-9999"
+                    required="true" placeholder="Ex: 99 99999-9999"></p-inputMask>
                 </div>
             </div>
         </div>
         <div class="p-grid p-jc-center">
             <div >
-				<button pButton type="button" label="Salvar" (click)="confirm()" class="p-mr-2"></button>
+				<button pButton type="submit" label="Salvar" class="p-mr-2"></button>
                 <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 				<button pButton type="reset" label="Limpar" class="p-button-secondary"></button>
             </div>

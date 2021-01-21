@@ -18,9 +18,12 @@ import { CalendarModule } from 'primeng/calendar';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ListboxModule} from 'primeng/listbox';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import {CardModule} from 'primeng/card';
 
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
 
 
 @NgModule({
@@ -42,11 +45,14 @@ import { MessageService } from 'primeng/api';
     CalendarModule,
     AutoCompleteModule,
     CheckboxModule,
-    ListboxModule
+    ListboxModule,
+    DynamicDialogModule,
+    CardModule
   ],
   providers: [
     ConfirmationService,
-    MessageService
+    MessageService,
+    DialogService
   ]
 })
 export class SharedModule { }

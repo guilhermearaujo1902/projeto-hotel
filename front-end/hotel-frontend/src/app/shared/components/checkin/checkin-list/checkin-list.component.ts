@@ -6,7 +6,6 @@ import { Checkin } from 'src/app/shared/models/Checkin';
 import { CheckinService } from 'src/app/core/services/checkin/checkin.service';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
-;
 
 @Component({
   selector: 'app-checkin-list',
@@ -61,5 +60,4 @@ export class CheckinListComponent implements OnInit {
   public msgDeleteSuccess() {
     this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Check-in cancelado com sucesso.' });
   }
-
 }

@@ -24,14 +24,16 @@ public class Checkin implements Serializable {
 	private double value;
 	
 	public Checkin() {
-	}
+	}	
 
-	public Checkin(long id, Guest guest, Calendar dateIn, Calendar dateOut, boolean addVehicle) {
+	public Checkin(long id, Guest guest, Calendar dateIn, Calendar dateOut, boolean addVehicle, double value) {
+		super();
 		this.id = id;
 		this.guest = guest;
 		this.dateIn = dateIn;
 		this.dateOut = dateOut;
 		this.addVehicle = addVehicle;
+		this.value = value;
 	}
 
 	@Id
@@ -80,7 +82,7 @@ public class Checkin implements Serializable {
 		this.addVehicle = addVehicle;
 	}
 
-	@Column(name = "value", nullable = false)
+	@Column(name = "value")
 	public double getValue() {
 		return value;
 	}

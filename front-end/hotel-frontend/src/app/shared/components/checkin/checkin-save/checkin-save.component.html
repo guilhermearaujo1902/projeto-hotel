@@ -19,8 +19,9 @@
 
             <div class="p-field p-col-6">
                 <label for="guest">Selecione o hóspede</label>
-                <p-autoComplete [(ngModel)]="checkin.guest" name="guest" field="name" id="guest" [suggestions]="guests"
-                    (completeMethod)="findGuests()" [dropdown]="true"></p-autoComplete>
+                <button type="button" (click)="show()" pButton icon="pi pi-search" label="Buscar"></button>
+                <input id="guest" name="guest" [(ngModel)]="selectedGuest" 
+                type="text" required="true" pInputText readonly="true" >
             </div>
 
             <div class="p-field-checkbox p-col-6">

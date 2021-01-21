@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/modules/shared/shared.module';
 import { MenuComponent } from './shared/components/menu/menu.component';
+import { GuestCardComponent } from './shared/components/guest/guest-card/guest-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    GuestCardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [GuestCardComponent]
 })
 export class AppModule { }
