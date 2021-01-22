@@ -41,7 +41,7 @@ export class MenuComponent implements OnInit {
         label: 'Novo check-in',
         icon: 'pi pi-plus',
         command: () => {
-          this.router.navigate(['/checkin-create']);
+          this.router.navigate(['/checkin-save']);
         }
       },
       {

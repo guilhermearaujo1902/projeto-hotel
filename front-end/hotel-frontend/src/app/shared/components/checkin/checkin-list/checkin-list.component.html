@@ -1,11 +1,17 @@
 <p-toast position="top-center"></p-toast>
+<div class="p-mb-2">
+    <p-button label="Novo Check-in" icon="pi pi-plus" (click)="newCheckin()"></p-button>
+</div>
 <p-panel header="Registros de Check-in">
-    <p-table [value]="checkins" styleClass="p-datatable-striped">
+
+    <p-table [value]="checkins" styleClass="p-datatable-striped" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="guest">Hóspede <p-sortIcon field="guest"></p-sortIcon>
                 </th>
                 <th pSortableColumn="document">Documento <p-sortIcon field="document"></p-sortIcon>
+                </th>
+                <th pSortableColumn="dateOut">Data de saída <p-sortIcon field="dateOut"></p-sortIcon>
                 </th>
                 <th pSortableColumn="value">Valor gasto <p-sortIcon field="value"></p-sortIcon>
                 </th>
@@ -16,10 +22,12 @@
             <tr>
                 <td>{{checkin.guest.name}}</td>
                 <td>{{checkin.guest.document}}</td>
+                <td>{{checkin.dateOut | date: 'dd/MM/yyyy'}}</td>
                 <td>{{checkin.value | currency: 'BRL'}}</td>
                 <td>
-					<p-confirmPopup></p-confirmPopup>
-					<button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded" (click)="confirm($event, checkin)"></button>
+                    <p-confirmPopup></p-confirmPopup>
+                    <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded"
+                        (click)="confirm($event, checkin)"></button>
                 </td>
             </tr>
         </ng-template>

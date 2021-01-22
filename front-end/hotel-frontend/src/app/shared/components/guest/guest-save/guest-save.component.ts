@@ -10,7 +10,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-guest-save',
   templateUrl: './guest-save.component.html',
-  styleUrls: ['./guest-save.component.css']
+  styleUrls: ['./guest-save.component.css'],
 })
 export class GuestSaveComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class GuestSaveComponent implements OnInit {
     private router: Router,
     private confirmationService: ConfirmationService,
     private messageService: MessageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +37,7 @@ export class GuestSaveComponent implements OnInit {
       .subscribe(data => {
         this.msgSaveSuccess();
         this.guest = new Guest();
+        this.router.navigate(['guest-list']);
       },
         error => console.log(error)
       );

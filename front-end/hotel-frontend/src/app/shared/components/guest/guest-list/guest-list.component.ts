@@ -68,4 +68,8 @@ export class GuestListComponent implements OnInit {
     this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Hóspede excluído com sucesso.' });
   }
 
+  public newGuest() {
+    this.router.navigate(['guest-save/ ']);
+  }
+
 }

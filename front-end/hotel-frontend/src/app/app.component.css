@@ -2,6 +2,7 @@
     background-color: #078c76;
 }
 
-.menu-text{
-    color: #ffffff;
+.title{
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

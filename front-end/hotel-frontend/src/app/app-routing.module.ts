@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./shared/components/guest/guest-list/guest-list.module').then(m => m.GuestListModule)
   },
   {
-    path: 'checkin-create',
+    path: 'checkin-save',
     loadChildren: () => import('./shared/components/checkin/checkin-save/checkin-save.module').then(m => m.ChekinSaveModule)
   },
   {

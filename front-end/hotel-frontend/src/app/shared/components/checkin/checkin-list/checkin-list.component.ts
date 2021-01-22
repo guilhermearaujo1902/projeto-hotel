@@ -6,6 +6,7 @@ import { Checkin } from 'src/app/shared/models/Checkin';
 import { CheckinService } from 'src/app/core/services/checkin/checkin.service';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkin-list',
@@ -19,7 +20,8 @@ export class CheckinListComponent implements OnInit {
   constructor(
     private checkinService: CheckinService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -60,4 +62,9 @@ export class CheckinListComponent implements OnInit {
   public msgDeleteSuccess() {
     this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Check-in cancelado com sucesso.' });
   }
+
+  public newCheckin() {
+    this.router.navigate(['checkin-save']);
+  }
+
 }

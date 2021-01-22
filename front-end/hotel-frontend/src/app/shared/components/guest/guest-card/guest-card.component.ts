@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Observable } from 'rxjs';
 
-import { GuestService } from 'src/app/core/services/guest/guest.service';
 import { Guest } from 'src/app/shared/models/Guest';
+
+import { GuestService } from 'src/app/core/services/guest/guest.service';
+
 
 @Component({
   selector: 'app-guest-card',
@@ -34,5 +36,4 @@ export class GuestCardComponent implements OnInit {
   selectProduct(guest: Guest) {
     this.ref.close(guest);
   }
-
 }

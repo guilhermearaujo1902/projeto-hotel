@@ -18,8 +18,8 @@ import { CalendarModule } from 'primeng/calendar';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ListboxModule} from 'primeng/listbox';
-import {DynamicDialogModule} from 'primeng/dynamicdialog';
-import {CardModule} from 'primeng/card';
+import {DynamicDialogModule, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
@@ -47,12 +47,13 @@ import { DialogService } from 'primeng/dynamicdialog';
     CheckboxModule,
     ListboxModule,
     DynamicDialogModule,
-    CardModule
+    RadioButtonModule
   ],
   providers: [
     ConfirmationService,
     MessageService,
-    DialogService
+    DialogService,
+    DynamicDialogRef
   ]
 })
 export class SharedModule { }

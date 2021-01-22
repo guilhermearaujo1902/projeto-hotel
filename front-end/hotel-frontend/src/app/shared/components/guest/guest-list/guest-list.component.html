@@ -1,6 +1,9 @@
 <p-toast position="top-center"></p-toast>
+<div class="p-mb-2">
+    <p-button label="Novo Hópede" icon="pi pi-plus" (click)="newGuest()"></p-button>
+</div>
 <p-panel header="Lista de hóspedes">
-    <p-table [value]="guests" styleClass="p-datatable-striped">
+    <p-table [value]="guests" styleClass="p-datatable-striped" [paginator]="true" [rows]="5">
         <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="id">Código <p-sortIcon field="id"></p-sortIcon>

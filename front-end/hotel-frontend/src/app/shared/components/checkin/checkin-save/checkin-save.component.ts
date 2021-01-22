@@ -16,13 +16,14 @@ import { GuestCardComponent } from '../../guest/guest-card/guest-card.component'
   selector: 'app-checkin-save',
   templateUrl: './checkin-save.component.html',
   styleUrls: ['./checkin-save.component.css'],
-  providers: [DialogService]
+  providers: [DialogService, DynamicDialogRef]
 })
 export class CheckinSaveComponent implements OnInit {
 
   public checkin: Checkin = new Checkin();
   public guests: Observable<Guest[]>;
   public selectedGuest: String;
+  public ref: DynamicDialogRef;
 
   constructor(
     private checkinService: CheckinService,
@@ -42,6 +43,7 @@ export class CheckinSaveComponent implements OnInit {
       .subscribe(data => {
         this.checkin = new Checkin();
         this.msgSaveSuccess();
+        this.router.navigate(['checkin-list']);
       },
         error => console.log(error)
       );
@@ -66,8 +68,6 @@ export class CheckinSaveComponent implements OnInit {
   public msgSaveSuccess() {
     this.messageService.add({ severity: 'success', summary: 'Mensagem', detail: 'Check-in realizado com sucesso!' });
   }
-
-  public ref: DynamicDialogRef;
 
   public show() {
     this.ref = this.dialogService.open(GuestCardComponent, {

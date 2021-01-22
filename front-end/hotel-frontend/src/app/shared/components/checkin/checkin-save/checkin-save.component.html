@@ -19,9 +19,12 @@
 
             <div class="p-field p-col-6">
                 <label for="guest">Selecione o hóspede</label>
-                <button type="button" (click)="show()" pButton icon="pi pi-search" label="Buscar"></button>
-                <input id="guest" name="guest" [(ngModel)]="selectedGuest" 
-                type="text" required="true" pInputText readonly="true" >
+                <div class="p-inputgroup">
+                    <button type="button" pButton pRipple label="Buscar" (click)="show()" icon="pi pi-search"></button>
+                    <input id="guest" name="guest" [(ngModel)]="selectedGuest" 
+                type="text" required="true" pInputText readonly="true" placeholder="Clique no botão para escolher">       
+                </div>
+                
             </div>
 
             <div class="p-field-checkbox p-col-6">
